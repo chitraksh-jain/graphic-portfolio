@@ -1,0 +1,349 @@
+/* ==========================================================================
+   DESIGN SYSTEM - CHITRAKSH JAIN PORTFOLIO
+   Aesthetic: Antigravity & Vibrant Liquid Aura (Glassmorphism & Radial Mesh)
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --clr-bg: #0b0914;
+  --clr-teal: #0d9488;
+  --clr-violet: #7c3aed;
+  --clr-coral: #f43f5e;
+  --clr-indigo: #4338ca;
+  --clr-text-primary: #ffffff;
+  --clr-text-secondary: #a1a1aa;
+  --clr-text-muted: #71717a;
+  --clr-glass-bg: rgba(255, 255, 255, 0.03);
+  --clr-glass-border: rgba(255, 255, 255, 0.08);
+  --clr-glass-shadow: rgba(0, 0, 0, 0.3);
+  
+  /* Fonts */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  /* Transitions */
+  --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-duration: 0.6s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--clr-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.2);
+  border-radius: 10px;
+  border: 2px solid var(--clr-bg);
+  transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 58, 237, 0.5);
+}
+
+/* ==========================================================================
+   BACKGROUND & LIQUID AURA
+   ========================================================================== */
+
+#bg-aura-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  background-color: #06040a;
+}
+
+.aura-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  mix-blend-mode: screen;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.blob-teal {
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, var(--clr-teal) 0%, transparent 70%);
+  top: -10%;
+  left: -10%;
+  animation: float-blob-1 25s ease-in-out infinite alternate;
+}
+
+.blob-violet {
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, var(--clr-violet) 0%, transparent 70%);
+  bottom: -20%;
+  right: -10%;
+  animation: float-blob-2 30s ease-in-out infinite alternate;
+}
+
+.blob-coral {
+  width: 45vw;
+  height: 45vw;
+  background: radial-gradient(circle, var(--clr-coral) 0%, transparent 70%);
+  top: 40%;
+  right: 15%;
+  animation: float-blob-3 20s ease-in-out infinite alternate;
+}
+
+.blob-indigo {
+  width: 55vw;
+  height: 55vw;
+  background: radial-gradient(circle, var(--clr-indigo) 0%, transparent 70%);
+  bottom: 20%;
+  left: 10%;
+  animation: float-blob-4 28s ease-in-out infinite alternate;
+}
+
+@keyframes float-blob-1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(10vw, 5vh) scale(1.1); }
+  100% { transform: translate(-5vw, 15vh) scale(0.9); }
+}
+
+@keyframes float-blob-2 {
+  0% { transform: translate(0, 0) scale(0.95); }
+  50% { transform: translate(-12vw, -10vh) scale(1.15); }
+  100% { transform: translate(5vw, 5vh) scale(1); }
+}
+
+@keyframes float-blob-3 {
+  0% { transform: translate(0, 0) scale(1.05); }
+  50% { transform: translate(-5vw, 12vh) scale(0.9); }
+  100% { transform: translate(12vw, -5vh) scale(1.1); }
+}
+
+@keyframes float-blob-4 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(8vw, -15vh) scale(1.1); }
+  100% { transform: translate(-8vw, 8vh) scale(0.95); }
+}
+
+/* ==========================================================================
+   GLASSMORPHISM
+   ========================================================================== */
+
+.glass-panel {
+  background: var(--clr-glass-bg);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid var(--clr-glass-border);
+  box-shadow: 0 16px 40px 0 var(--clr-glass-shadow);
+  border-radius: 28px;
+  transition: border-color 0.4s var(--transition-smooth),
+              background-color 0.4s var(--transition-smooth),
+              transform 0.4s var(--transition-smooth),
+              box-shadow 0.4s var(--transition-smooth);
+}
+
+.glass-panel:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--clr-text-primary);
+  line-height: 1.15;
+}
+
+.text-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+/* ==========================================================================
+   FLOATING & PARALLAX ANIMATIONS
+   ========================================================================== */
+
+.float-slow {
+  animation: floatAnimSlow 8s ease-in-out infinite;
+}
+
+.float-med {
+  animation: floatAnimMed 6s ease-in-out infinite;
+}
+
+.float-fast {
+  animation: floatAnimFast 4s ease-in-out infinite;
+}
+
+@keyframes floatAnimSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-16px) rotate(2deg); }
+}
+
+@keyframes floatAnimMed {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-25px) rotate(-3deg); }
+}
+
+@keyframes floatAnimFast {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+/* Scroll Fade Up classes */
+.fade-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s var(--transition-smooth),
+              transform 1s var(--transition-smooth);
+}
+
+.fade-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Pop up animation (Services Gallery) */
+.pop-up {
+  opacity: 0;
+  transform: scale(0.85) translateY(40px);
+  transition: opacity 0.8s var(--transition-spring),
+              transform 0.8s var(--transition-spring);
+}
+
+.pop-up.active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+.btn-primary {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  color: var(--clr-text-primary);
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 16px 36px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: all 0.3s var(--transition-smooth);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%);
+  border-color: rgba(255,255,255,0.3);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.25);
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:active {
+  transform: translateY(-1px);
+}
+
+/* Magnetic border effect */
+.btn-primary svg {
+  transition: transform 0.3s var(--transition-spring);
+}
+
+.btn-primary:hover svg {
+  transform: translateX(4px) rotate(-15deg);
+}
+
+/* ==========================================================================
+   UTILITIES & CONTAINER
+   ========================================================================== */
+
+.app-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .app-container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-container {
+    padding: 0 20px;
+  }
+}
+
+/* Section Spacing */
+.section-padding {
+  padding: 120px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 80px 0;
+  }
+}
