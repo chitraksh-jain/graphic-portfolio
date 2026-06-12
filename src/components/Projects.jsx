@@ -16,6 +16,7 @@ import gameThumbnailImg from '../assets/Graphic Projects/Game Thumbnail.png';
 import teaImg from '../assets/Graphic Projects/Tea.png';
 import twinTowerImg from '../assets/Graphic Projects/Twin Tower Trek.png';
 import vlogThumbnailImg from '../assets/Graphic Projects/Vlog Thumbnail.png';
+import shoeBrandingImg from '../assets/Graphic Projects/Shoe Branding.png';
 
 // Reusable individual Card component that triggers its own scroll popup animation
 function ProjectCard({ item, idx, onClick }) {
@@ -264,6 +265,13 @@ export default function Projects() {
       img: vlogThumbnailImg,
       number: "10",
       aspect: "16/9"
+    },
+    {
+      title: "Shoe Branding Concept",
+      category: "Branding",
+      img: shoeBrandingImg,
+      number: "11",
+      aspect: "4/5"
     }
   ];
 
